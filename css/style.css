@@ -3040,4 +3040,21 @@ td, th {
   color: #691cff;
 }
 
+/* CUSTOM */
 
+.elementFaq{
+  cursor: pointer;
+}
+
+.accordion dd{
+  opacity: 0;
+  height: 0;
+  transition-duration: 0.5s;
+  padding: 0 20px;
+}
+
+.accordion dd.active{
+  opacity: 1;
+  height: 105px;
+  padding: 10px 20px 20px;
+}

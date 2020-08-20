@@ -250,11 +250,11 @@ CSS
                     </div>
                     <div class="col-lg-7">
                         <dl class="accordion">
-                            <template v-for="question in faq.questions">
-                                <dt>
-                                    <a href="#" class="active">{{ question.sentence }}</a>
+                            <template v-for="(question, i) in faq.questions">
+                                <dt @click="faq.currentQuestion = i" class="elementFaq">
+                                    <a :class="{active: faq.currentQuestion == i}">{{ question.sentence }}</a>
                                 </dt>
-                                <dd>
+                                <dd :class="{active: faq.currentQuestion == i}">
                                     {{ question.answer }}
                                 </dd>
                             </template>
