@@ -1,6 +1,7 @@
 new Vue({
     el: "#app",
     data : {
+        inPageProduct: false,
         faq: {
             currentQuestion: 0,
             questions: [
@@ -16,8 +17,8 @@ new Vue({
                     sentence: 'By in no ecstatic wondered disposal my speaking?',
                     answer: '3Far curiosity incommode now led smallness allowance. Favour bed assure son things yet. She consisted consulted elsewhere happiness disposing household any old the.Widow downs you new shade drift hopes small.So otherwise commanded sweetness we improving.'
                 }
-            ]
-        },
+            ] // array(question)
+        }, //faq
         products: {
             data: [
                 {
@@ -60,8 +61,13 @@ new Vue({
                     visit: 'envato.com',
                     date: '01.09.2018'
                 }
-            ]
-        },
-    
-    }
-})
+            ] // array(data)
+        }, // products
+    },// data
+    methods: {
+        showProduct: function(){
+            this.inPageProduct = true
+            window.scrollTo(0, 0)
+        } // showProduct()
+    }, // methods
+}) // VueJS
