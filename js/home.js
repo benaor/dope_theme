@@ -20,9 +20,10 @@ new Vue({
             ] // array(question)
         }, //faq
         products: {
+            currentIndex: 0,
             data: [
                 {
-                    name: 'Titre du produit 1',
+                    name: 'casque audio',
                     img: 'img/portfolio1.jpg',
                     client: 'Envato 1',
                     categories: ['Fashion', 'Design'],
@@ -30,7 +31,7 @@ new Vue({
                     date: '01.09.2018'
                 },
                 {
-                    name: 'Titre du produit 2',
+                    name: 'broyeur bois',
                     img: 'img/portfolio2.jpg',
                     client: 'Envato 2',
                     categories: ['Fashion', 'Design'],
@@ -46,7 +47,7 @@ new Vue({
                     date: '01.09.2018'
                 },
                 {
-                    name: 'Titre du produit 4',
+                    name: 'Gameboy Color',
                     img: 'img/portfolio4.jpg',
                     client: 'Envato 2',
                     categories: ['Fashion', 'Design'],
@@ -54,7 +55,7 @@ new Vue({
                     date: '01.09.2018'
                 },
                 {
-                    name: 'Titre du produit 5',
+                    name: 'Apple Watch',
                     img: 'img/portfolio5.jpg',
                     client: 'Envato 2',
                     categories: ['Fashion', 'Design'],
@@ -64,8 +65,14 @@ new Vue({
             ] // array(data)
         }, // products
     },// data
+    computed: {
+        currentProduct: function(){
+            return this.products.data[this.products.currentIndex]
+        }//currentProduct()
+    }, // computed
     methods: {
-        showProduct: function(){
+        showProduct: function(i){
+            this.products.currentIndex = i
             this.inPageProduct = true
             window.scrollTo(0, 0)
         } // showProduct()

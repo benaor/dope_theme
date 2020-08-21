@@ -156,7 +156,7 @@ CSS
                                     <div class="single-portfolio">
                                         <img alt="" class="img-fluid" :src="product.img">
                                         <div class="box-content">
-                                            <a class="cursorPointer" @click="showProduct">
+                                            <a class="cursorPointer" @click="showProduct(i)">
                                                 <h5 class="title">{{ product.name }}</h5>
                                             </a>
                                             <span class="post">Produit {{ i + 1 }}</span>
@@ -171,7 +171,7 @@ CSS
                                     <div class="single-portfolio">
                                         <img alt="" class="img-fluid" :src="product.img">
                                         <div class="box-content">
-                                            <a class="cursorPointer" @click="showProduct">
+                                            <a class="cursorPointer" @click="showProduct(i)">
                                                 <h5 class="title">{{ product.name }}</h5>
                                             </a>
                                             <span class="post">Produit {{ i + 1 }}</span>
@@ -383,7 +383,7 @@ CSS
 
         </template>
 
-        <template v-else="">
+        <template v-else>
 
             <!-- Start page-top-banner section -->
             <section class="page-top-banner section-gap-full relative" data-stellar-background-ratio="0.5">
@@ -391,8 +391,8 @@ CSS
                 <div class="container">
                     <div class="row section-gap-half">
                         <div class="col-lg-12 text-center">
-                            <h1>Product title</h1>
-                            <h4>product</h4>
+                            <h1>{{ currentProduct.name }}</h1>
+                            <h4>Produit</h4>
                         </div>
                     </div>
                 </div>
@@ -404,14 +404,14 @@ CSS
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 details-left">
-                            <img class="img-fluid" src="img/portfolio4.jpg" alt="">
+                            <img class="img-fluid" :src="currentProduct.img" alt="">
                         </div>
                         <div class="col-lg-4 details-right">
                             <ul>
-                                <li><span>Client:</span> Envato</li>
-                                <li><span>Category:</span> Fashion,Design</li>
-                                <li><span>Visit:</span> envato.com</li>
-                                <li><span>Date:</span> 01.09.2018</li>
+                                <li><span>Client:</span> {{ currentProduct.client }}</li>
+                                <li><span>Category:</span> {{ currentProduct.categories.join(', ') }}</li>
+                                <li><span>Visit:</span> {{ currentProduct.visit }}</li>
+                                <li><span>Date:</span> {{ currentProduct.date }}</li>
                             </ul>
                             <p>                  
                                 To shewing another demands to. Marianne property cheerful informed at striking at.
