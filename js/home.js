@@ -75,6 +75,9 @@ new Vue({
             this.products.currentIndex = i
             this.inPageProduct = true
             window.scrollTo(0, 0)
-        } // showProduct()
+        }, // showProduct()
+        homeLink: function(){
+            this.inPageProduct = false
+        }
     }, // methods
 }) // VueJS

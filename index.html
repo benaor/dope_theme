@@ -77,19 +77,19 @@ CSS
                                 <div class="dopenav">
                                     <ul id="nav">
                                         <li>
-                                            <a href="#banner-section">Accueil</a>
+                                            <a @click="homeLink" href="#banner-section">Accueil</a>
                                         </li>
                                         <li>
-                                            <a href="#section-portfolio">Projets</a>
+                                            <a @click="homeLink" href="#section-portfolio">Projets</a>
                                         </li>
                                         <li>
-                                            <a href="#section-screenshots">Screenshots</a>
+                                            <a @click="homeLink" href="#section-screenshots">Screenshots</a>
                                         </li>
                                         <li>
-                                            <a href="#section-faq">FAQ</a>
+                                            <a @click="homeLink" href="#section-faq">FAQ</a>
                                         </li>
                                         <li>
-                                            <a href="#testimonial-section">Avis</a>
+                                            <a @click="homeLink" href="#testimonial-section">Avis</a>
                                         </li>
                                         <li>
                                             <a href="blog.html">Blog</a>
@@ -106,7 +106,7 @@ CSS
         </header>
         <!-- Start header section -->
 
-        <template v-if="!inPageProduct">
+        <div v-show="!inPageProduct">
 
             <!-- Start banner section -->
             <section class="banner-section relative section-gap-full" id="banner-section">
@@ -381,9 +381,9 @@ CSS
             </section>
             <!-- End download section -->
 
-        </template>
+        </div>
 
-        <template v-else>
+        <div v-show="inPageProduct">
 
             <!-- Start page-top-banner section -->
             <section class="page-top-banner section-gap-full relative" data-stellar-background-ratio="0.5">
@@ -425,7 +425,7 @@ CSS
             </section>
             <!-- End product-detials section -->
 
-        </template>
+        </div>
 
     </main>
 
